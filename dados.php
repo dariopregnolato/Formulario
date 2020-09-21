@@ -1,5 +1,5 @@
 <?php 
-
+include_once('conexao.php');
 $nome = $_POST['tNome'];
 $email = $_POST['tMail'];
 $cpf = $_POST['tCPF'];
@@ -11,6 +11,7 @@ $bairro = $_POST['tBairro'];
 $cidade = $_POST['tCidade'];
 $estado = $_POST['tEst'];
 
-echo "Seu nome é $nome, seu email é $email";
+$result_msg_contato = "INSERT INTO mensagens_contatos(nome, email, cpf, telefone, cep, largadouro, numero, bairro, cidade, estado) VALUES ('$nome', '$email', '$cpf', '$telefone', '$cep', '$largadouro', '$numero', '$bairro', '$cidade', '$estado' NOW())";
+	$resultado_msg_contato= mysqli_query($conn, $result_msg_contato)
 
  ?>
