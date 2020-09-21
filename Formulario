@@ -1,24 +1,38 @@
-# Formulario_php
 <!DOCTYPE html>
 <html>
 <head>
    <title>Fomulário Para Cadastro</title>
+   <script type="text/javascript">
+      function validar_formulariojs()
+      {
+         var nome = formulariojs.tName.value;
+         var email = formulariojs.tMail.value;
+         var CPF = formulariojs.tCPF.value;
+         var tel = formulariojs.tTel.value;
+         var CEP = formulariojs.tCEP.value;
+         var logradouro = formulariojs.tLogradouro.value;
+         var numero = formulariojs.tNumero.value;
+         var bairro = formulariojs.tBairro.value;
+         var cidade = formulariojs.tCidade.value;
+         var estado = formulariojs.tEst.value;
+      }
+   </script>
 </head>
 <body>
 
-<form method="POST" id="cFormulario" action="dados.php">
+<form method="POST" id="cFormulario" action="dados.php" name="formulariojs">
 <fieldset id="cadastro"><legend> Formulário de Cadastro</legend>
-<p>Nome: <input type="text" name="tNome" id="cNome" size="25" maxlength="30" placeholder="Nome Completo"></p> 
-<p>E-mail <input type="E-mail" name="tMail" id="cMail" size="25" maxlength="40" placeholder="E-Mail"></p> 
-<p>CPF ou CNPJ <input type="text" name="tCPF" id="cCPF" size="25" maxlength="40"></p> 
-<p>Telefone <input type="text" name="tTel" id="cTel" size="25" maxlength="40"></p>
-<p>CEP <input type="text" name="tCEP" id="" size="25" maxlength="40"></p> 
-<p>Logradouro <input type="text" name="tLogradouro" id="cLogradouro" size="40" maxlength="50" placeholder="Rua, Av, Trav."></p> 
-<p>Número <input type="number" name="tNumero" id="cNumero" size="10" maxlength="10" min="0" max="99999"></p> 
-<p>Bairro <input type="text" name="tBairro" id="cBairro" size="25" maxlength="40" placeholder="Digite seu bairro"></p> 
-<p>Cidade <input type="text" name="tCidade" id="cCidade" size="25" maxlength="40" placeholder="Digite sua cidade"></p> 
+<p>Nome: <input type="text" name="tNome" id="cNome" size="25" maxlength="30" placeholder="Nome Completo" required=""></p> 
+<p>E-mail <input type="E-mail" name="tMail" id="cMail" size="25" maxlength="40" placeholder="E-Mail" required=""></p> 
+<p>CPF ou CNPJ <input type="text" name="tCPF" id="cCPF" size="25" maxlength="40" required=""></p> 
+<p>Telefone <input type="text" name="tTel" id="cTel" size="25" maxlength="40" required=""></p>
+<p>CEP <input type="text" name="tCEP" id="" size="25" maxlength="40" required=""></p> 
+<p>Logradouro <input type="text" name="tLogradouro" id="cLogradouro" size="40" maxlength="50" placeholder="Rua, Av, Trav." required=""></p> 
+<p>Número <input type="number" name="tNumero" id="cNumero" size="10" maxlength="10" min="0" max="99999" required=""></p> 
+<p>Bairro <input type="text" name="tBairro" id="cBairro" size="25" maxlength="40" placeholder="Digite seu bairro" required=""></p> 
+<p>Cidade <input type="text" name="tCidade" id="cCidade" size="25" maxlength="40" placeholder="Digite sua cidade" required=""></p> 
 <p> <label for="cEst">Estado</label>
-<select name="tEst" id="cEst"> 
+<select name="tEst" id="cEst" required=""> 
    <option value="SP">São Paulo</option>
    <option value="RJ">Rio de Janeiro</option>
    <option value="MG">Minas Gerais</option>
@@ -30,11 +44,9 @@
    <option value="AC">Acre</option>
    <option value="BA">Bahia</option>
 </select></p> <br>
-<input type="submit" name="tEnviar" value="Enviar">
+<input type="submit" name="tEnviar" value="Enviar" onclick=" return validar_formulariojs">
 </fieldset>
+</form> 
 
-
-
-</form>
 </body>
 </html>
